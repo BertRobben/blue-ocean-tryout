@@ -24,7 +24,7 @@ pipeline {
     stage('Integration Test') {
       steps {
         dir "integration-tests" { 
-          bat 'mvn clean install -P integration'
+          bat 'mvn clean verify -P integration'
           junit(allowEmptyResults: true, testResults: 'target/failsafe-reports/**/*.xml')
         }        
       }
