@@ -17,7 +17,18 @@ pipeline {
       }
       post {
         success {
-          junit '**/target/surefire-reports/**/*.xml'
+          junit '**/target/surefire-reports/**/*.xml'          
+        }        
+      }
+    }
+    stage('Integration Test') {
+      steps {        
+          bat 'mvn clean install -P integration'
+          junit(allowEmptyResults: true, testResults: 'target/failsafe-reports/**/*.xml')
+      }
+      post {
+        success {
+          junit '**/target/failsafe-reports/**/*.xml'
           
         }
         
