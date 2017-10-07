@@ -9,6 +9,8 @@
 	<modules>
 		<module>jenkins-blue-ocean</module>
 		<module>integration-tests</module>
+		<module>chaos-tests-1</module>
+		<module>chaos-tests-2</module>
 	</modules>
 
 	<build>
