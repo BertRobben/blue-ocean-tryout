@@ -22,9 +22,11 @@ pipeline {
       }
     }
     stage('Integration Test') {
-      steps {        
+      steps {
+        dir "integration-tests" { 
           bat 'mvn clean install -P integration'
           junit(allowEmptyResults: true, testResults: 'target/failsafe-reports/**/*.xml')
+        }        
       }
       post {
         success {

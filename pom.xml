@@ -8,6 +8,7 @@
 
 	<modules>
 		<module>jenkins-blue-ocean</module>
+		<module>integration-tests</module>
 	</modules>
 
 	<build>
